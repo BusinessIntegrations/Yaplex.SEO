@@ -1,0 +1,17 @@
+﻿Name: Yaplex.SEO
+AntiForgery: enabled
+Author: Alex Shapovalov
+Website: https://yaplex.com
+Version: 1.1.0
+OrchardVersion: 1.10
+Description: The SEO module for Orchard CMS containing: meta keywords and description fields, page <title> override, robots.txt
+Features:
+    Yaplex.SEO:
+        Name: Yaplex.SEO
+        Description: SEO (Search engine optimization) module contains page title override, meta keywords and description.
+        Category: SEO
+    Yaplex.SEO.Robots:
+        Name: Yaplex.SEO.Robots
+        Description: Enables features that allow you to configure and expose a robots.txt for your website.
+        Category: SEO
+        Dependencies: Yaplex.SEO

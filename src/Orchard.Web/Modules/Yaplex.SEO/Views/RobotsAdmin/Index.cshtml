@@ -1,0 +1,17 @@
+﻿@model Yaplex.SEO.ViewModels.RobotsViewModel
+@{
+    Layout.Title = T("Robots");
+}
+@using (Html.BeginFormAntiForgeryPost())
+{
+    <fieldset>
+        <legend>@T("Robots.txt")</legend>
+        <div class="form-group">
+            @Html.TextAreaFor(m => m.RobotsTxt, 20, 75, new { @class = "text large"})
+            @Html.Hint(T("robots.txt content"))
+        </div>
+    </fieldset>
+    <fieldset>
+        <button type="submit">@T("Save")</button>
+    </fieldset>
+}

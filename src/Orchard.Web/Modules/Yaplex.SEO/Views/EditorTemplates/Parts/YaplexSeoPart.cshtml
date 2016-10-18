@@ -1,0 +1,30 @@
+﻿@model Yaplex.SEO.Models.SeoOverride
+
+<fieldset>
+    <legend>Yaplex.SEO</legend>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.PageTitle)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.PageTitle, new { @class = "large text" })
+        @Html.ValidationMessageFor(model => model.PageTitle)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.MetaKeywords)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.MetaKeywords, new { @class = "large text" })
+        @Html.ValidationMessageFor(model => model.MetaKeywords)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.MetaDescription)
+    </div>
+    <div class="editor-field">
+        @Html.TextAreaFor(model => model.MetaDescription)
+        @Html.ValidationMessageFor(model => model.MetaDescription)
+    </div>
+
+</fieldset>
