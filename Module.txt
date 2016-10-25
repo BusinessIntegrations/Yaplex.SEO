@@ -2,7 +2,7 @@
 AntiForgery: enabled
 Author: Alex Shapovalov
 Website: https://yaplex.com
-Version: 1.1.0
+Version: 1.1.1
 OrchardVersion: 1.10
 Description: The SEO module for Orchard CMS containing: meta keywords and description fields, page <title> override, robots.txt
 Features:
