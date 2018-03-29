@@ -1,24 +1,21 @@
-﻿using System.Web.Mvc;
-using Orchard;
-using Orchard.ContentManagement;
-using Yaplex.SEO.Models;
+﻿#region Using
+using System.Web.Mvc;
+#endregion
 
-namespace Yaplex.SEO.ActionResults
-{
-    public class RobotsResult : ActionResult
-    {
-        private readonly IOrchardServices _orchardServices;
+namespace Yaplex.SEO.ActionResults {
+    public class RobotsResult : ActionResult {
+        private readonly string _robotTxt;
 
-        public RobotsResult(IOrchardServices orchardServices)
-        {
-            _orchardServices = orchardServices;
+        public RobotsResult(string robotTxt) {
+            _robotTxt = robotTxt;
         }
 
-        public override void ExecuteResult(ControllerContext context)
-        {
-            var robotsTxt = _orchardServices.WorkContext.CurrentSite.As<RobotsSettingsPart>().RobotsTxt;
+        #region Methods
+        public override void ExecuteResult(ControllerContext context) {
+            var robotsTxt = _robotTxt;
             context.HttpContext.Response.ContentType = "text/plain";
             context.HttpContext.Response.Output.Write(robotsTxt);
         }
+        #endregion
     }
 }
