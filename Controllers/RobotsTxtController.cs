@@ -8,16 +8,17 @@ using Yaplex.SEO.Services;
 namespace Yaplex.SEO.Controllers {
     [OrchardFeature("Yaplex.SEO.Robots")]
     public class RobotsTxtController : Controller {
-        private readonly IRobotCacheService _cacheService;
+        private readonly ICacheService _cacheService;
 
-        public RobotsTxtController(IRobotCacheService cacheService) {
+        public RobotsTxtController(ICacheService cacheService) {
             _cacheService = cacheService;
         }
 
         #region Methods
         // GET: RobotsTxt
         public ActionResult Index() {
-            return new RobotsResult(_cacheService.GetRobotsTxt());
+            return new RobotsResult(_cacheService.GetData()
+                .RobotsTxt);
         }
         #endregion
     }

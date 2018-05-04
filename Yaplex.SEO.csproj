@@ -25,6 +25,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -90,20 +91,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionResults\RobotsResult.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="AdminMenu.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Controllers\RobotsTxtController.cs" />
-    <Compile Include="Drivers\RobotsSettingsDriver.cs" />
     <Compile Include="Drivers\SeoOverrideDriver.cs" />
     <Compile Include="Handlers\SeoOverrideHandler.cs" />
     <Compile Include="Handlers\RobotsSettingsPartHandler.cs" />
     <Compile Include="Migrations.cs" />
+    <Compile Include="Models\IRobotsSettingsPart.cs" />
     <Compile Include="Models\SeoOverride.cs" />
     <Compile Include="Models\RobotsSettingsPart.cs" />
     <Compile Include="Models\SeoOverrideRecord.cs" />
+    <Compile Include="Permissions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RobotsRoutes.cs" />
-    <Compile Include="Services\IRobotCacheService.cs" />
-    <Compile Include="Services\RobotCacheService.cs" />
+    <Compile Include="Services\CacheModel.cs" />
+    <Compile Include="Services\CacheService.cs" />
+    <Compile Include="Services\ICacheModel.cs" />
+    <Compile Include="Services\ICacheService.cs" />
     <Compile Include="Services\SeoPageTitleBuilder.cs" />
     <Compile Include="ViewModels\RobotsViewModel.cs" />
   </ItemGroup>
@@ -128,9 +134,7 @@
       <Private>false</Private>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Menus\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Views\EditorTemplates\Parts\YaplexSeoPart.cshtml" />
   </ItemGroup>
@@ -140,7 +144,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\EditorTemplates\Parts\RobotSettings.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

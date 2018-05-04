@@ -32,12 +32,14 @@ namespace Yaplex.SEO.Drivers {
                 if (!string.IsNullOrWhiteSpace(seoOverride.PageTitle)) {
                     _pageTitleBuilder?.SetTitle(seoOverride.PageTitle);
                 }
+
                 if (!string.IsNullOrWhiteSpace(seoOverride.MetaKeywords)) {
                     _resourceManager.SetMeta(new MetaEntry {
                         Name = "keywords",
                         Content = seoOverride.MetaKeywords
                     });
                 }
+
                 if (!string.IsNullOrWhiteSpace(seoOverride.MetaDescription)) {
                     _resourceManager.SetMeta(new MetaEntry {
                         Name = "description",
@@ -45,6 +47,7 @@ namespace Yaplex.SEO.Drivers {
                     });
                 }
             }
+
             return null;
         }
 
@@ -72,6 +75,7 @@ namespace Yaplex.SEO.Drivers {
             if (context.Data.Element(partDefinitionName) == null) {
                 return;
             }
+
             part.MetaKeywords = context.Attribute(part.PartDefinition.Name, "MetaKeywords");
             part.MetaDescription = context.Attribute(part.PartDefinition.Name, "MetaDescription");
             part.PageTitle = context.Attribute(part.PartDefinition.Name, "PageTitle");

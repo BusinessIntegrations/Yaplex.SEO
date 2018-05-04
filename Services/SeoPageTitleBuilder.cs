@@ -54,6 +54,7 @@ namespace Yaplex.SEO.Services {
                 _titleSeparator = _siteService.GetSiteSettings()
                     .PageTitleSeparator;
             }
+
             return _titleParts.Count == 0
                 ? string.Empty
                 : string.Join(_titleSeparator,
