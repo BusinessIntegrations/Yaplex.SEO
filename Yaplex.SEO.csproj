@@ -134,7 +134,9 @@
       <Private>false</Private>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="README.md" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Views\EditorTemplates\Parts\YaplexSeoPart.cshtml" />
   </ItemGroup>
